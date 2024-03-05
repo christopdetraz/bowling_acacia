@@ -8,7 +8,7 @@ import static org.junit.Assert.*;
 public class GameTest {
 
     @Test
-    @DisplayName("20 rolls at 0")
+    @DisplayName("20 rolls at 0 should be 0")
     public void score_Given20RollsAt0() {
         Game game = new Game();
         for (int i = 0; i < 20; i++) {
@@ -18,7 +18,7 @@ public class GameTest {
     }
 
     @Test
-    @DisplayName("20 rolls at 1")
+    @DisplayName("20 rolls at 1 should be 20")
     public void score_Given20RollsAt1() {
         Game game = new Game();
         for (int i = 0; i < 20; i++) {
@@ -28,7 +28,7 @@ public class GameTest {
     }
 
     @Test
-    @DisplayName("1 spare + 1 roll at 3")
+    @DisplayName("1 spare + 1 roll at 3 should be 16")
     public void score_Given1SparePlus1RollAt3() {
         Game game = new Game();
         game.roll(5);
@@ -41,7 +41,7 @@ public class GameTest {
     }
 
     @Test
-    @DisplayName("1 strike + 1 roll at 3 + 1 roll at 4")
+    @DisplayName("1 strike + 1 roll at 3 + 1 roll at 4 should be 24")
     public void score_Given1StrikePlus1RollAt3Plus1RollAt4() {
         Game game = new Game();
         game.roll(10);
