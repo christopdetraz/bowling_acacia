@@ -10,14 +10,33 @@ public class Frame {
         rolls[1] = new Roll(0);
     }
 
-    public void addRoll(int pins) {
+    public Boolean isStrike() {
+        return rolls[0].getPins() == 10;
+    }
+
+    public Boolean isSpare() {
+        return rolls[0].getPins() + rolls[1].getPins() == 10;
+    }
+
+    public boolean addRoll(int pins) {
+        if (isStrike()) {
+            return true;
+        } else
         if (currentRoll < rolls.length) {
             rolls[currentRoll++] = new Roll(pins);
+            return false;
         }
+        return false;
     }
 
     public int score() {
-        return rolls[0].getPins() + rolls[1].getPins();
+        if (isStrike()) {
+            return 10;
+        } else if (isSpare()) {
+            return 10;
+        } else {
+            return rolls[0].getPins() + rolls[1].getPins();
+        }
     }
 
     public boolean isCompleted() {
